@@ -1,9 +1,11 @@
-import { Text, TextInput, View, TouchableOpacity } from "react-native";
+import { Button, Text, TextInput, View, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { saveUserDataInAsyncStorage } from "../services/userDataManager";
 import { useNavigation } from "@react-navigation/native";
 import { login } from "../services/auth";
 import { styles } from "../cssStyles/commonStyles";
+import { onGoogleButtonPressLogin } from "../services/googleAuth";
+
 
 
 const LoginScreen = () => {
@@ -47,6 +49,10 @@ const LoginScreen = () => {
             <TextInput style={styles.input} placeholder="Password" value={password} onChangeText={setPassword} />
 
             <TouchableOpacity onPress={handleLogin}><Text>Login here</Text></TouchableOpacity>
+            <Button
+                title="Google Login"
+                onPress={onGoogleButtonPressLogin}
+            />
 
         </View>
     )

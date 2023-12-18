@@ -5,7 +5,7 @@ import { signup } from "../services/auth";
 import { saveUserData, saveUserDataInAsyncStorage } from "../services/userDataManager";
 import { styles } from "../cssStyles/commonStyles";
 import { Button } from 'react-native';
-import { onGoogleButtonPress } from '../services/googleAuth';
+import { onGoogleButtonPressSignin } from '../services/googleAuth';
 
 
 const RegisterScreen = () => {
@@ -62,7 +62,7 @@ const RegisterScreen = () => {
                 <TouchableOpacity style={styles.button} onPress={handleSignup}><Text>Click here to register</Text></TouchableOpacity>
                 <Button
                     title="Google Sign-In"
-                    onPress={onGoogleButtonPress}
+                    onPress={onGoogleButtonPressSignin}
                 />
                 <Text>.</Text>
                 <Text>.</Text>

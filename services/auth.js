@@ -1,4 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -36,6 +37,7 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
     try {
+        await GoogleSignin.signOut();
         //await AsyncStorage.removeItem('userUID');
         await auth().signOut();
     }

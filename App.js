@@ -3,8 +3,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import RegisterScreen from './screens/registerScreen';
 import LoginScreen from './screens/loginScreen';
 import HomeScreen from './screens/homeScreen';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { app } from "./services/config";
 import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import 'expo-dev-client';
